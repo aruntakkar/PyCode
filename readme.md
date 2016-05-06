@@ -1,4 +1,2 @@
-##Finally started the Python
-
-**Code in this Repo is From the Various Sources**
+#Python Code from Various Sources
 
