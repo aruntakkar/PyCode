@@ -17,3 +17,17 @@ print("I " + "love " + "Python")
 """
 # Here str converts non strings to strings
 print("I have " + str(2) + " coconuts!")
+
+"""
+ When you want to print string with other strings there is a better method than
+ concatenation string together is %
+ the % operator after a string is used to combine a string with variables.
+ the % operator will replace a %s in the string with the string variable that
+ comes after it.
+"""
+
+string_1 = "noida,"
+string_2 = "gurugram from gurgaon."
+
+# combine string with variables
+print("lets go to %s Silly move of Govt %s" % (string_1, string_2))
