@@ -31,3 +31,13 @@ string_2 = "gurugram from gurgaon."
 
 # combine string with variables
 print("lets go to %s Silly move of Govt %s" % (string_1, string_2))
+
+"""
+ you need same number of %s terms in a string as the numbers of
+ variables/strings in parentheses:
+"""
+name = "arun"
+color = "grey"
+dream = "Great Programmer"
+
+print("The %s favourite color is %s dream to become %s" % (name, color, dream))
