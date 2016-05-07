@@ -17,3 +17,12 @@ division = 108 / 9
 percentage = 100 * 10/100
 
 print(count_to)
+
+"""
+ you can combine math with other data types (eg. booleans)
+ and commands to create useful prorams.
+"""
+# Exponentiation
+eggs = 10**2
+
+print(eggs)
