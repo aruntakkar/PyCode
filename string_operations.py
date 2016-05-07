@@ -41,3 +41,34 @@ color = "grey"
 dream = "Great Programmer"
 
 print("The %s favourite color is %s dream to become %s" % (name, color, dream))
+
+# same about example with the input for variables
+
+name = input("What is your name?")
+color = input("What is your favourite color")
+dream = input("dream to Become?")
+
+print("Ah your name is %s , color: %s, dream: %s" % (name, color, dream))
+
+"""
+ Three ways to create the strings
+"""
+'Alpha'
+"Bravo"
+str(3)
+
+"""
+ string methods
+"""
+len("charlie")
+"Delta".upper()
+"Echo".lower()
+
+# printing a string
+print("Foxtrot")
+
+# Advance Printing techniques
+g = "Golf"
+h = "Hotel"
+
+print("%s , %s" % (g, h))
