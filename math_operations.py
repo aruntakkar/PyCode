@@ -26,3 +26,13 @@ print(count_to)
 eggs = 10**2
 
 print(eggs)
+
+"""
+ Our Final operator is modulo, it returns reminder from the division
+"""
+
+# modulo
+
+spam = 9 % 2
+
+print(spam)
