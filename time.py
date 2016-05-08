@@ -25,6 +25,7 @@ print(current_year)
  that the % operator will fill %s placeholder in the string on the left with
  the strings in the parantheses on the right.
 """
+
 today_date = datetime.datetime.now()
 
 # print in specific format month/day/year format
