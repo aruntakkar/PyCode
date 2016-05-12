@@ -72,3 +72,24 @@ g = "Golf"
 h = "Hotel"
 
 print("%s , %s" % (g, h))
+
+# To print in the New line in the new line use \n
+print("ok\nnumbers")
+
+# To Print Raw String like file path so it don't have special meaning
+print(r"c\users\hp\nnumbers")
+
+"""
+slicing a string with number of charactrers in the string
+"""
+
+string = "Test String"
+
+# print first character of string
+print(string[0])
+
+# print last character of string
+print(string[-1])
+
+# print the character b/w 2-4 it gives the string characters 2,3 not the 4
+print(string[2:4])
