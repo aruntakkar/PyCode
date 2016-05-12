@@ -11,3 +11,6 @@ print(len(about))
 
 # Converting to Upper string
 print(about.upper())
+
+# To Print Raw String like file path so it don't have special meaning
+print(r"c\users\hp\nnumbers")
