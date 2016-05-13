@@ -23,7 +23,7 @@ print(players)
 Extended_players = players + [7, 8, 9, 10]
 print(Extended_players)
 
-# Excess the element upto index 2 (so element Till 2 will be given)
+# Slice the list upto index 2 (so element Till 2 will be given)
 print(players[:2])
 
 # To Add the element till index 2 element 0
