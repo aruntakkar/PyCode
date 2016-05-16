@@ -14,7 +14,6 @@ class Enemy:
 
     def __init__(self, x):
         self.energy = x
-        print(self.energy)
 
     def get_energy(self):
         print(self.energy)
