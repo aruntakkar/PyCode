@@ -30,4 +30,16 @@ today_date = datetime.datetime.now()
 
 # print in specific format month/day/year format
 
-print('%s/%s/%s' % (today_date.day, today_date.month, today_date.year))
+print('%s/%s/%s' % (today_date.month, today_date.day, today_date.year))
+
+"""
+ if you want time in hh:mm:ss format
+"""
+
+print('%s:%s:%s' % (today_date.hour, today_date.minute, today_date.second))
+
+"""
+    print date and time in same line
+"""
+
+print('%s/%s/%s %s:%s:%s' % (today_date.month, today_date.day, today_date.year, today_date.hour, today_date.minute, today_date.second))
