@@ -26,9 +26,12 @@ print(Extended_players)
 # Slice the list upto index 2 (so element Till 2 will be given)
 print(players[:2])
 
-# To Add the element till index 2 element 0
+# To Add the element till before index 2 element 0
 players[:2] = [0, 0]
 print(players)
+
+# To Get the element after the index 2
+players[2:]
 
 # To Delete the element till the index 2
 players[:2] = []
@@ -39,3 +42,14 @@ print(players)
 # To Empty the Whole list
 players[:] = []
 print(players)
+
+# we can get the index of particular element in the list using index
+animals = ["tiger", "bat", "cat"]
+print(animals.index("tiger"))
+
+animals = ["aardvark", "badger", "duck", "emu", "fennec fox"]
+duck_index = animals.index("duck")  # Use index() to find "duck"
+
+animals.insert(duck_index, "cobra")
+
+print(animals)
