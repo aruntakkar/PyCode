@@ -7,8 +7,8 @@
 def clinic():
     print("You have entered the clinic!")
     print("Do you take the door on the left or the right?")
-    answer = input("Type Left or Right and Hit Enter").lower()
-    print(answer)
+    # The eval function lets a python program run python code within itself
+    answer = eval(input("Type Left or Right and Hit Enter")).lower()
     if answer == "left" or answer == "l":
         print("This is the Verbal Abuse Room, you heap of parrot droppings!")
     elif answer == "right" or answer == "r":

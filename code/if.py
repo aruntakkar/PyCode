@@ -23,7 +23,7 @@ else:
     print("please sign up %s" % (name))
 
 
-name = input("Enter your name?")
+name = eval(input("Enter your name?"))
 
 if name is "arun":
     print("Hey arun")
