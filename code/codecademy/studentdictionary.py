@@ -24,10 +24,10 @@ for student in students:
     print("%s" % student["homework"])
     print("%s" % student["quizzes"])
     print("%s" % student["tests"])
-    print()
+    print("")
 
 
-# avearage function to calculate average
+# average function to calculate average
 def average(numbers):
     total = sum(numbers)
     total = float(total)
@@ -55,12 +55,18 @@ def get_letter_grade(score):
         return "F"
 
 
+students = [lloyd, alice, tyler]
+
+
 def get_class_average(students):
     results = []
     for student in students:
-        get_average(student)
-        results.append()
-        return average(results)
+        results.append(get_average(student))
+    return average(results)
 
 
-get_letter_grade(get_average(lloyd))
+print(get_class_average(students))
+
+score = get_class_average(students)
+
+print(get_letter_grade(score))
