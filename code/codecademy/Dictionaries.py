@@ -1,7 +1,7 @@
 
 zoo_animals = {'Unicorn': 'Cotton Candy House', 'sloth': 'Rainforest Exhibit',
-                'Bengal Tiger': 'Jungle House', 'Atlantic Puffin': 'Arctic Exhibit',
-                'Rockhopper Penguin': 'Arctic Exhibit'}
+               'Bengal Tiger': 'Jungle House', 'Atlantic Puffin': 'Arctic Exhibit',
+               'Rockhopper Penguin': 'Arctic Exhibit'}
 
 # Removing the 'Unicorn' entry.
 del zoo_animals['Unicorn']

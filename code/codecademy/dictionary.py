@@ -33,5 +33,5 @@ for key in prices:
     print("Stock: %s" % stocks[key])
     # total Value
     value = prices[key] + stocks[key]
-    total = total + value
+    total += value
 print("total income %s" % total)
