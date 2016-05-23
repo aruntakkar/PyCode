@@ -55,9 +55,6 @@ def get_letter_grade(score):
         return "F"
 
 
-students = [lloyd, alice, tyler]
-
-
 def get_class_average(students):
     results = []
     for student in students:
