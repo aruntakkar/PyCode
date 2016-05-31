@@ -1,5 +1,4 @@
 class Animal(object):
-    """Makes cute animals."""
     is_alive = True
 
     def __init__(self, name, age):
