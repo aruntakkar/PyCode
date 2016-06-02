@@ -2,6 +2,8 @@
     Sometimes we need the method that we override in child class, but we need
     themfrom the parent class then we can use the super builtin.
 """
+
+
 class Employee(object):
 
     def __init__(self, employee_name):
@@ -20,7 +22,7 @@ class PartTimeEmployee(Employee):
 
     def full_time_wage(self, hours):
         self.hours = hours
-        # Syntax in python 2 > super(parent_class, self).method(args)
+        # Syntax in python 2 > super(current_class, self).method(args)
         # Syntax in python 3 > super().method(args)
         return super().calculate_wage(hours)
 
