@@ -22,13 +22,19 @@ print(my_car.condition)
 class ElectricCar(Car):
 
     def __init__(self, model, color, mpg, battery_type):
-        super().__init__(model, color, mpg)
+        super(ElectricCar, self).__init__(model, color, mpg)
         self.battery_type = battery_type
 
     def display_car(self):
-        inherit_str = super().display_car()
+        inherit_str = super(ElectricCar, self).display_car()
         return inherit_str + "It has a %s battery. " % (self.battery_type)
 
-my_electric_car = ElectricCar("Ford", "white", 88, "molten salt")
+    def drive_car(self):
+        self.condition = "like new"
 
-print(my_electric_car.display_car())
+my_car = ElectricCar("Ford", "white", 88, "molten salt")
+
+print(my_car.display_car())
+print(my_car.condition)
+print(my_car.drive_car())
+print(my_car.condition)
