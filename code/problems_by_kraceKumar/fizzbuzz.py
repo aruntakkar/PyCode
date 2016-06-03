@@ -14,15 +14,13 @@
 
 
 def main():
-    num = 15
+    num = 25
     if num % 3 == 0:
         print("Fizz")
-    elif num % 5 == 0:
+    if num % 5 == 0:
         print("Buzz")
-    elif (num % 3 == 0) and (num % 5 == 0):
+    if (num % 3 == 0) and (num % 5 == 0):
         print("FizzBuzz")
-    else:
-        print("Cool No Buzz Word")
 
 # __name__ holds the name of the current module
 if __name__ == "__main__":
