@@ -55,3 +55,10 @@ my_file.close()
 """
 with open("text.txt", "w") as textfile:
     textfile.write("Success!")
+
+"""
+    Python has file object have a (closed) attribute
+    which is (True) when a file is closed and (False) otherwise.
+
+    By Checking (file_object.closed) we can check file is closed or not.
+"""
