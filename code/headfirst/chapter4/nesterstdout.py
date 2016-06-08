@@ -6,6 +6,9 @@
 
 import sys
 
+movies = ["The Holy Grail", 1975, "Terry Jones & Terry Gilliam", 91, ["Graham Chapman \
+    ", ["Michael Palin", "John clesse", "Tarry Gilliam", "Eric Idle", "Tarry Jones"]]]
+
 
 def print_lol(the_list, indent=False, level=0, fh=sys.stdout):
     """
@@ -32,3 +35,13 @@ def print_lol(the_list, indent=False, level=0, fh=sys.stdout):
                 for tab_stop in range(level):
                     print("\t", end="", file=fh)
             print(each_item, file=fh)
+
+if __name__ == "__main__":
+    print_lol(movies)
+
+# Just for checking the namespace
+# Python code is associated with the name space
+# __main__ when reading from standard IDLE or run as Script.
+# name is set to module name if run through module.
+# All code in python is associated with namespace.
+print(__name__)
