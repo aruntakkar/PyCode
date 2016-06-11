@@ -19,7 +19,7 @@ def read_files(filename):
         # creating the temp list to hold the list untill dictionary
         temp1 = data.strip().split(",")
 
-        # return the dictionary by key/value mapping of the list
+        # return the dictionary by key/value mapping of the list data.
         return {'Name': temp1.pop(0),
                 'DOB':  temp1.pop(0),
                 'Times': str(sorted(set([sanitize(t) for t in temp1]))[0:3])}
