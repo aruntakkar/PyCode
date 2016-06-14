@@ -10,7 +10,7 @@ def sanitize(time_string):
     return (mins + "." + secs)
 
 
-def read_files(filename):
+def get_coach_data(filename):
     try:
         with open(filename) as file:
             data = file.readline()
@@ -19,7 +19,7 @@ def read_files(filename):
         print("File error " + str(err))
 
 
-sarah = read_files('sarah2.txt')
+sarah = get_coach_data('sarah2.txt')
 
 # dictionary approach to mapping(associate) the data values with key
 

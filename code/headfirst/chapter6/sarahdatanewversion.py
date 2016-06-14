@@ -10,7 +10,7 @@ def sanitize(time_string):
     return (mins + "." + secs)
 
 
-def read_files(filename):
+def get_coach_data(filename):
 
     try:
         with open(filename) as file:
@@ -29,10 +29,10 @@ def read_files(filename):
 
 # Invoking the read_files with the filename attribute
 
-james = read_files('james2.txt')
-julie = read_files('julie2.txt')
-mikey = read_files('mikey2.txt')
-sarah = read_files('sarah2.txt')
+james = get_coach_data('james2.txt')
+julie = get_coach_data('julie2.txt')
+mikey = get_coach_data('mikey2.txt')
+sarah = get_coach_data('sarah2.txt')
 
 # Printing the athletes name and there respective names
 
