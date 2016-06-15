@@ -27,7 +27,7 @@ def get_coach_data(filename):
     except IOError as err:
         print("File error " + str(err))
 
-# Invoking the read_files with the filename attribute
+# Invoking the get_coach_data function with the files
 
 james = get_coach_data('james2.txt')
 julie = get_coach_data('julie2.txt')
