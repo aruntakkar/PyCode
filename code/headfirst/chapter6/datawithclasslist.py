@@ -13,7 +13,9 @@ def sanitize(time_string):
 class AthleteList(list):
 
     def __init__(self, name, dob=None, times=[]):
+        # intializing the derived from class, and then
         list.__init__([])
+        # Assigning the arguments to the attributes
         self.name = name
         self.dob = dob
         self.extend(times)
