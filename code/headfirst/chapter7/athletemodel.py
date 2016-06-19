@@ -37,7 +37,6 @@ def get_from_store():
     try:
         with open("athletes.pickle", "rb") as atpf:
             all_athletes = pickle.load(atpf)
-
     except IOError as err:
         print("File error (get_from_store): " + str(err))
 
