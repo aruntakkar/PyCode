@@ -2,6 +2,18 @@ import pickle
 from athletelist import AthleteList
 
 
+def sanitize(time_string):
+    if ":" in time_string:
+        splitter = ":"
+    elif "-" in time_string:
+        splitter = "-"
+    else:
+        return time_string
+
+    (mins, secs) = time_string.split(splitter)
+    return (mins + "." + secs)
+
+
 def get_coach_data(filename):
     try:
         with open(filename) as file:
@@ -43,19 +55,19 @@ def get_from_store():
     return(all_athletes)
 
 
-the_files = ['sarah2.txt', 'james2.txt', 'mikey2.txt', 'julie2.txt']
+# the_files = ['sarah2.txt', 'james2.txt', 'mikey2.txt', 'julie2.txt']
 
-data = put_to_store(the_files)
+# data = put_to_store(the_files)
 
-print("-To Access the data, Use the dictionary returned by put_to_store()-")
+# print("-To Access the data, Use the dictionary returned by put_to_store()-")
 
-for each_athlete in data:
-    print(data[each_athlete].name + ' ' +
-          data[each_athlete].dob)
+# for each_athlete in data:
+#     print(data[each_athlete].name + ' ' +
+#           data[each_athlete].dob)
 
-print("-To Checking the get_from_store() functionality to unpickle the data-")
+# print("-To Checking the get_from_store() functionality to unpickle the data-")
 
-data_copy = get_from_store()
+# data_copy = get_from_store()
 
-for each_athlete in data_copy:
-    print(data_copy[each_athlete].name + ' ' + data_copy[each_athlete].dob)
+# for each_athlete in data_copy:
+#     print(data_copy[each_athlete].name + ' ' + data_copy[each_athlete].dob)

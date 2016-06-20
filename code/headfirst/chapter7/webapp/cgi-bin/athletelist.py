@@ -1,3 +1,6 @@
+import athletemodel
+
+
 class AthleteList(list):
 
     def __init__(self, name, dob=None, times=[]):
@@ -9,4 +12,4 @@ class AthleteList(list):
         self.extend(times)
 
     def top3(self):
-        return (sorted(set([sanitize(t) for t in self]))[0:3])
+        return (sorted(set([athletemodel.sanitize(t) for t in self]))[0:3])
