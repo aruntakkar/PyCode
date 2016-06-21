@@ -106,10 +106,8 @@ def radio_button(rb_name, rb_value):
 
 def u_list(items):
     u_string = '<ul>'
-
     for item in items:
-        u_string += '<li>' + item + '<li>'
-
+        u_string += '<li>' + item + '</li>'
     u_string += '</ul>'
     return(u_string)
 
