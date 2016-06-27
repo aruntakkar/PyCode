@@ -28,10 +28,8 @@ def get_single_item_data(item_url):
         print(item_name.string)
 
     for sellers_information in soup.findAll('a', {'class': 'seller-name'}):
-        seller_info.appnend
         seller_name = sellers_information.string
         print(seller_name, " ", end="")
-
     for selling_information in soup.findAll('span', {'class': 'selling-price'}):
         selling_price = selling_information.string
         print(selling_price, " ", end="")
