@@ -15,6 +15,7 @@ form_data = cgi.FieldStorage()
 
 # Access the named piece of data from the form's data.
 athlete_name = form_data['which_athlete'].value
+print(athlete_name)
 
 print(yate.start_response())
 

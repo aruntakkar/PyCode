@@ -1,6 +1,8 @@
 # Here the Code to CGI Script called cgi-bin/test-form.py
 # which will generate the HTML Form
 
+# ! /usr/local/bin/python3
+
 import yate
 
 print(yate.start_response('text/html'))
