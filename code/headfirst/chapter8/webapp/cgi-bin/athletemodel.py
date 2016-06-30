@@ -47,7 +47,7 @@ def get_from_store():
 # the list of athlete names as string.
 def get_names_from_store():
     athletes = get_from_store()
-    response = [athletes[each_ath].name for each_ath in athletes]
+    response = [athletes[each_athlete].name for each_athlete in athletes]
     return(response)
 
 # the_files = ['sarah2.txt', 'james2.txt', 'mikey2.txt', 'julie2.txt']
