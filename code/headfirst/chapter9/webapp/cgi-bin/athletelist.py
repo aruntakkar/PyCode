@@ -28,3 +28,7 @@ class AthleteList(list):
         return ({'Name': self.name,
                  'DOB': self.dob,
                  'Top3': self.top3})
+
+    @property
+    def clean_data(self):
+        return (sorted(set([self.sanitize(t) for t in self])))
