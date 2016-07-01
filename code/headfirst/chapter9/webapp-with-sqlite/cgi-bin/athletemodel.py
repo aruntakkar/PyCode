@@ -1,8 +1,10 @@
 import sqlite3
 import pickle
+import os.path
 from athletelist import AthleteList
 
-db_name = "coachdata.sqlite"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+db_name = os.path.join(BASE_DIR, "coachdata.sqlite")
 
 
 def get_coach_data(filename):
@@ -63,11 +65,11 @@ def get_athlete_from_id(athlete_id):
     cursor = connection.cursor()
     # GET the Name and DOB From the athlete DB
     results = cursor.execute(
-        """SELECT value name, dob FROM athletes WHERE id=?""", (athlete_id))
-    (names, dob) = results.fetchone()
+        """SELECT name, dob FROM athletes WHERE id=?""", (athlete_id))
+    (name, dob) = results.fetchone()
     # GET the list of Times from the timing_data
     results = cursor.execute(
-        """SELECT FROM timing_data WHERE id=?""", (athlete_id))
+        """SELECT value FROM timing_data WHERE athlete_id=?""", (athlete_id))
     data = [row[0] for row in results.fetchall()]
     # Take the data from the both query results and turn it into a dictionary.
     response = {
