@@ -33,9 +33,9 @@ def end_form(submit_msg="submit"):
     return('<p></p><input type=submit  value="' + submit_msg + '"></form>')
 
 
-def radio_button(rb_name, rb_value):
-    return('<input type="radio" name="' + rb_name + '" value="' + rb_value + '"> ' +
-           rb_value + '<br/>')
+def radio_button(rb_name, rb_value, rb_id):
+    return('<input type="radio" name="' + rb_name + '" value="' + str(rb_id) +
+           '"> ' + rb_value + '<br/>')
 
 
 def u_list(items):

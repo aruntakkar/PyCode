@@ -4,7 +4,7 @@ import cgi
 import athletemodel
 import yate
 
-athletes = athletemodel.get_from_store()
+athletes = athletemodel.get_athlete_from_id(athlete_id)
 
 # Here cgi module is used to access the form data coming from genrate_list.py
 # which athlete data you are working with
@@ -19,14 +19,17 @@ print(athlete_name)
 
 print(yate.start_response())
 
-print(yate.include_header("Coach Kelly Timing Data"))
+print(yate.include_header("NUAC's Timing Data"))
 
-print(yate.header("Athlete: " + athlete_name + " " +
-                  ', dob:' + athletes[athlete_name].dob + "."))
+print(yate.header("Athlete: " + athlete['Name'] + " " +
+                  ', DOB:' + athlete['DOB'] + "."))
 
-print(yate.para_text("The top Three times for the Athletes"))
+print(yate.para_text("The Top Three times for the Athletes are:"))
 
-print(yate.u_list(athletes[athlete_name].top3))
+print(yate.u_list(athlete['top3']))
+
+print(yate.para("The entire set of timing data is: " + str(athlete['data'])
+                "(duplicates removed)."))
 
 print(yate.include_footer({"Home": "/index.html",
                            "Select another athlete": "generate_list.py"}))
