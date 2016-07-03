@@ -21,9 +21,11 @@ get_data_cgi = '/cgi-bin/generate_data.py'
 def send_to_server(url, post_data=None):
     if post_data:
         page = urlopen(url, urlencode(post_data))
+        print("if")
     else:
         page = urlopen(url)
-    return(page.read().decode("utf8"))
+        print("Else")
+    return(page.read().decode("utf"))
 
 app = android.Android()
 
@@ -34,7 +36,10 @@ def status_update(msg, how_long=2):
 
 status_update(hello_msg)
 
-athlete_names = sorted(json.loads(send_to_server(web_server + get_names_cgi)))
+athletes = sorted(json.loads(send_to_server(web_server + get_names_cgi)))
+
+# Extract the athlete names only from the list of lists.
+athlete_names = [ath[0] for ath in athletes]
 
 app.dialogCreateAlert(list_title)
 
@@ -56,8 +61,8 @@ if resp['which'] in ('positive'):
     # the element[0] from the list of result
     selected_athlete = app.dialogGetSelectedItems().result[0]
     print(selected_athlete)
-    # look up the athlete_name using the index value
-    which_athlete = athlete_names[selected_athlete]
+    # look up the athlete_id associated with the selected athlete
+    which_athlete = athletes[selected_athlete][1]
     print(which_athlete)
     # A web request to the server to Fetch the Athlete Data
     athlete = json.loads(send_to_server(
@@ -76,7 +81,7 @@ if resp['which'] in ('positive'):
     to See "dialogSetItems()"
     """
 
-    app.dialogSetItems(athlete['Top3'])
+    app.dialogSetItems(athlete['top3'])
 
     app.dialogSetPositiveButtonText('OK')
 
