@@ -8,6 +8,6 @@ import athletemodel
 
 names = athletemodel.get_namesID_from_store()
 
-print('The names are:' + names, file=sys.stderr)
+# print('The names are:' + names, file=sys.stderr)
 print(yate.start_response("application/json"))
 print(json.dumps(sorted(names)))

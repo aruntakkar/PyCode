@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import android
 import json
 import time
@@ -5,11 +7,11 @@ import time
 from urllib import urlencode
 from urllib2 import urlopen
 
-hello_msg = "Welcome to Coach Kelly's Timing App"
+hello_msg = 'Welcome to Coach Kelly"s Timing App'
 
 list_title = 'Here is your list of athletes:'
 
-quit_msg = "Quitting Coach Kelly's App."
+quit_msg = 'Quitting Coach Kelly"s App.'
 
 web_server = 'http://192.168.0.102:8080/'
 
@@ -21,11 +23,9 @@ get_data_cgi = '/cgi-bin/generate_data.py'
 def send_to_server(url, post_data=None):
     if post_data:
         page = urlopen(url, urlencode(post_data))
-        print("if")
     else:
         page = urlopen(url)
-        print("Else")
-    return(page.read().decode("utf"))
+    return(page.read().decode('utf8'))
 
 app = android.Android()
 
@@ -75,19 +75,37 @@ if resp['which'] in ('positive'):
 
     app.dialogCreateAlert(athlete_title)
 
-    """
-    This time user needs to see only
-    the Data this time, so you need
-    to See "dialogSetItems()"
-    """
+    # This time user needs to see only
+    # the Data this time, so you need
+    # to See 'dialogSetItems()'
 
     app.dialogSetItems(athlete['top3'])
 
     app.dialogSetPositiveButtonText('OK')
 
+    app.dialogSetNegativeButtonText('Add Time')
+
     app.dialogShow()
 
     # wait for the User Response
-    resp = app.dailogGetResponse().result
+    resp = app.dialogGetResponse().result
+
+    if resp['which'] in ('positive'):
+        pass
+    elif resp['which'] in ('negative'):
+
+        timing_title = 'Enter a new time'
+
+        timing_msg = 'Provide a new timing value ' + athlete['Name'] + ': '
+
+        add_time_cgi = '/cgi-bin/add_timing_data.py'
+
+        resp = app.dialogGetInput(timing_title, timing_msg).result
+        if resp is not None:
+            new_time = resp
+            send_to_server(web_server + add_time_cgi, {
+                'Time': new_time,
+                'Athlete': which_athlete
+            })
 
 status_update(quit_msg)

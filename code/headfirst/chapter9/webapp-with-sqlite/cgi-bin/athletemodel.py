@@ -85,7 +85,6 @@ def get_athlete_from_id(athlete_id):
 
 def get_namesID_from_store():
     connection = sqlite3.connect(db_name)
-    print("connection is made")
     cursor = connection.cursor()
     results = cursor.execute("""SELECT name, id FROM athletes""")
     response = results.fetchall()
