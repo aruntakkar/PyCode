@@ -14,6 +14,9 @@ with open('PaceData.csv') as paces:
         # the dictionary
         # row_data[row_label] = row
 
+        # we need mapping b/w the
+        # elements time(as a key)
+        # and column heading(as a value)
         inner_dict = {}
         # with each iteration "i" is the
         # current column number.
@@ -24,9 +27,19 @@ with open('PaceData.csv') as paces:
             # with the dictionary populated assign it
             # to its label in row_data
         row_data[row_label] = inner_dict
+        print(row_data)
 
-    column_heading = row_data['15k']['43:24']
-    print(column_heading)
+distance_run = input('Enter the distance attempted: ')
+recorded_time = input('Enter the recorded time: ')
+predicted_distance = input('Enter the distance you want a prediction for: ')
+
+# column_heading = row_data['15k']['43:24']
+# print(row_data['20k']['59:03'])
+# # print(column_heading)
+
+# prediction = [k for k in row_data['20k'].keys() if row_data['20k'][
+#     k] == column_heading]
+# print(prediction)
 
 # num_cols = len(column_headings)
 # print(num_cols, end=' -> ')
